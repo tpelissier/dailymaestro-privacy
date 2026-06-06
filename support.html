@@ -14,11 +14,6 @@
     color: #1c1c1e;
     background: #ffffff;
   }
-  @media (prefers-color-scheme: dark) {
-    body { color: #e5e5ea; background: #000000; }
-    a { color: #0a84ff; }
-    .note { background: #1c1c1e; }
-  }
   h1 { font-size: 1.9rem; margin: 0 0 .25rem; }
   h2 { font-size: 1.25rem; margin: 2rem 0 .5rem; }
   h3 { font-size: 1.05rem; margin: 1.25rem 0 .25rem; }
@@ -33,6 +28,12 @@
     margin: 1.25rem 0;
   }
   footer { color: #8e8e93; font-size: .9rem; margin-top: 3rem; }
+  /* Dark mode LAST so its overrides win the cascade (equal specificity → source order). */
+  @media (prefers-color-scheme: dark) {
+    body { color: #e5e5ea; background: #000000; }
+    a { color: #0a84ff; }
+    .note { background: #1c1c1e; color: #e5e5ea; }
+  }
 </style>
 </head>
 <body>
